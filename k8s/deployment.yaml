@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: asdjk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asdjk
+  template:
+    metadata:
+      labels:
+        app: asdjk
+    spec:
+      containers:
+      - image: okteto.dev/asdjk:latest
+        name: asdjk
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/RECIPES-html.zip"
+        - name: Vless_UUID
+          value: "99e39c49-80f9-4624-afc3-17a2fefa7205"
+        - name: Vless_Path
+          value: "/99e39c49-80f9-4624-afc3-17a2fefa7205-vless"
+        - name: Vmess_UUID
+          value: "99e39c49-80f9-4624-afc3-17a2fefa7205"
+        - name: Vmess_Path
+          value: "/99e39c49-80f9-4624-afc3-17a2fefa7205-vmess"
+        - name: Share_Path
+          value: "/vnpk"
